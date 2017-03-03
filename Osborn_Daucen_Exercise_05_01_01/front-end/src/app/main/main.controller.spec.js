@@ -1,3 +1,12 @@
+/** Daucen Osborn
+    March 2, 2017
+    main.controller.spec.js
+
+    Purpose: This file is the source of our controllers for the home page.
+
+    3-3-17 - DMO -
+**/
+
 describe('controllers', () => {
   let vm;
 
