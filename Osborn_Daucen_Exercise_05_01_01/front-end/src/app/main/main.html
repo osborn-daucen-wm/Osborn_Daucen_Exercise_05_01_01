@@ -5,6 +5,7 @@
     Purpose: This file is the page that is inserted into our viewing area in the home page.
 
     3-3-17 - DMO -
+    3-6-17 - DMO - Added ng-model="main.message" to the textarea to help add custom messages.
 -->
 
 <div class="container">
@@ -13,14 +14,28 @@
   </div>
 
   <div class="panel panel-default">
-      <div class="panel-heading">
-        Post A Message
+    <div class="panel-heading">
+      Post A Message
+    </div>
+    <div class="panel-body">
+      <div class="input-group">
+        <textarea class="form-control custom-control" rows="3" style="resize:none" ng-model="main.message"></textarea>
+        <span class="input-group-addon btn btn-primary" ng-click="main.postMessage()">Post</span>
       </div>
-      <div class="panel-body">
-          <div class="input-group">
-              <textarea class="form-control custom-control" rows="3" style="resize:none"></textarea>
-              <span class="input-group-addon btn btn-primary" ng-click="main.postMessage()" >Post</span>
-          </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Messages</div>
+    <div class="panel-body">
+      <div class="input-group">
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="message in main.messages">
+            {{messages.msg}}
+          </li>
+        </ul>
       </div>
+    </div>
+
   </div>
 </div>
